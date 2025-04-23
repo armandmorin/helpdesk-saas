@@ -1,0 +1,27 @@
+{
+  "name": "helpdesk-saas",
+  "version": "1.0.0",
+  "description": "Help Desk SaaS Application for Netlify and Supabase",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"cd client && npm run dev\" \"netlify dev\"",
+    "build": "cd client && npm run build",
+    "start": "netlify dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "helpdesk",
+    "saas",
+    "netlify",
+    "supabase"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "netlify-cli": "^17.10.1"
+  }
+}

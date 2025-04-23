@@ -1,130 +1,137 @@
-# Help Desk SaaS - User Guide
+# Help Desk SaaS User Guide
 
-This document provides instructions for using the Help Desk SaaS application.
+This guide provides instructions for using the Help Desk SaaS application deployed on Netlify with Supabase.
+
+## User Roles
+
+The application supports four user roles:
+
+1. **Superadmin**: Platform owner who manages admins and global settings
+2. **Admin**: Manages their own help desk instance with customizable branding
+3. **Agent**: Handles tickets for a specific admin's help desk
+4. **Customer**: End-user who creates and views tickets
 
 ## Getting Started
 
 ### Registration and Login
 
-1. **Register a new account**:
-   - Navigate to the registration page
-   - Enter your email, password, first name, last name, and organization name
-   - Submit the form to create your account
-   - You'll be automatically assigned as an admin for your organization
+1. Navigate to the application URL
+2. Click "Register" to create a new account
+3. Fill in your details and select your role (if applicable)
+4. After registration, log in with your email and password
 
-2. **Login to your account**:
-   - Enter your email and password
-   - Click "Sign in" to access your dashboard
+### Dashboard Navigation
 
-### User Roles
+The dashboard layout varies based on your user role:
 
-The system has three user roles with different permissions:
-
-1. **Admin**:
-   - Full access to all features
-   - Can manage users and subusers
-   - Can configure pricing plans
-   - Can manage Stripe integration
-   - Can view and manage all tickets
-
-2. **Agent**:
-   - Can view and respond to all tickets
-   - Can update ticket status
-   - Can add internal notes to tickets
-
-3. **Customer**:
-   - Can create and view their own tickets
-   - Can respond to their tickets
-   - Cannot see internal notes
+- **Superadmin**: Access to admin management, platform branding, and Stripe settings
+- **Admin**: Access to user management, ticket management, and organization branding
+- **Agent**: Access to assigned tickets and customer management
+- **Customer**: Access to their own tickets and profile settings
 
 ## Ticket Management
 
-### Creating Tickets
+### Creating a Ticket
 
-1. Navigate to the "Tickets" section
-2. Click "Create New Ticket"
-3. Fill in the ticket details:
-   - Title: A brief summary of the issue
-   - Category: The type of issue (e.g., Technical, Billing, Feature Request)
-   - Priority: Low, Medium, High, or Urgent
-   - Description: Detailed explanation of the issue
-4. Click "Create Ticket" to submit
+1. Click "New Ticket" button
+2. Fill in the ticket details:
+   - Title
+   - Description
+   - Priority (Low, Medium, High, Urgent)
+   - Category
+3. Click "Submit" to create the ticket
 
 ### Managing Tickets
 
-1. **Viewing Tickets**:
-   - Navigate to the "Tickets" section to see a list of all tickets
-   - Use the search bar to find specific tickets
-   - Filter tickets by status using the dropdown menu
+1. View all tickets in the "Tickets" section
+2. Filter tickets by status, priority, or category
+3. Search for tickets using the search bar
+4. Click on a ticket to view details
 
-2. **Responding to Tickets**:
-   - Open a ticket by clicking on it in the list
-   - Scroll to the bottom to find the response form
-   - Type your response and click "Submit Response"
-   - Agents can check "Internal note" to add notes only visible to other agents
+### Ticket Statuses
 
-3. **Updating Ticket Status**:
-   - Agents and admins can update the ticket status using the dropdown at the top of the ticket
-   - Available statuses: Open, In Progress, On Hold, Pending, Resolved, Archived
+- **Open**: Newly created tickets
+- **In Progress**: Tickets being worked on
+- **On Hold**: Tickets temporarily paused
+- **Pending**: Tickets awaiting customer response
+- **Resolved**: Completed tickets
+- **Archived**: Tickets removed from active view
 
-## Admin Features
+### Responding to Tickets
 
-### User Management
+1. Open a ticket
+2. Type your response in the text box
+3. For agents: Toggle "Internal Note" for private comments
+4. Click "Send" to post your response
 
-1. Navigate to the "Admin" section and select "User Management"
-2. **Adding Users**:
-   - Click "Add User"
-   - Fill in the user details including email, password, name, and role
-   - Click "Create User" to add the new user
+## User Management
 
-3. **Managing Users**:
-   - View all users in your organization
-   - Activate or deactivate users as needed
-   - The main admin account cannot be deactivated
+### For Admins
 
-### Pricing Configuration
+1. Navigate to "Users" section
+2. View all users in your organization
+3. Create new users with the "Add User" button
+4. Edit user details or deactivate accounts as needed
 
-1. Navigate to the "Admin" section and select "Pricing Settings"
-2. **Stripe Integration**:
-   - Connect your Stripe account by clicking "Connect Stripe"
-   - Toggle between test and live modes as needed
+### For Superadmins
 
-3. **Managing Pricing Plans**:
-   - Click "Add Plan" to create a new pricing plan
-   - Fill in the plan details including name, price, billing cycle, and features
-   - Existing plans can be activated or deactivated as needed
+1. Navigate to "Admins" section
+2. Manage admin accounts across the platform
+3. Create new admin organizations
+4. Monitor admin activity and usage
 
-### Subscription Management
+## Branding Customization
 
-1. Navigate to the "Admin" section and select "Subscription Management"
-2. **Current Subscription**:
-   - View details of your current subscription
-   - Cancel your subscription if needed
+### For Admins
 
-3. **Changing Plans**:
-   - Browse available plans
-   - Click "Subscribe" on a plan to upgrade or change your subscription
-   - Follow the Stripe checkout process to complete payment
+1. Navigate to "Branding" section
+2. Customize your help desk appearance:
+   - Upload logo
+   - Set background color
+   - Set sidebar color
+   - Choose font colors
+   - Set button and link colors
+3. Preview changes in real-time
+4. Save your branding settings
 
-## Best Practices
+### For Superadmins
 
-1. **Ticket Organization**:
-   - Use clear, descriptive titles for tickets
-   - Assign appropriate categories and priorities
-   - Update ticket status regularly to reflect current state
+1. Navigate to "Platform Branding"
+2. Set default branding for the entire platform
+3. Changes will apply to all help desks without custom branding
 
-2. **User Management**:
-   - Create separate accounts for each team member
-   - Assign appropriate roles based on responsibilities
-   - Deactivate accounts for users who no longer need access
+## Search Functionality
 
-3. **Communication**:
-   - Use internal notes for team communication
-   - Provide clear, helpful responses to customers
-   - Update tickets promptly to maintain good customer service
+1. Use the search bar in the header
+2. Superadmins: Search for admins
+3. Admins: Search for tickets or users
+4. Results appear in a dropdown or dedicated search results page
 
-## Troubleshooting
+## Profile Settings
 
-- **Login Issues**: Ensure you're using the correct email and password. Use the "Forgot Password" feature if needed.
-- **Missing Features**: Verify your user role has permission to access the feature you're looking for.
-- **Payment Problems**: Check your Stripe connection and subscription status in the admin dashboard.
+1. Click on your profile icon
+2. Select "Profile Settings"
+3. Update your personal information
+4. Change your password
+5. Manage notification preferences
+
+## Stripe Integration (Superadmin Only)
+
+1. Navigate to "Stripe Settings"
+2. Configure Stripe API keys:
+   - Test mode keys for development
+   - Live mode keys for production
+3. Set up pricing plans for admins
+4. Monitor subscription status and payments
+
+## Customer Portal
+
+Each admin has a dedicated customer portal where their users can:
+
+1. Register for an account
+2. Create and view tickets
+3. Update their profile information
+4. View knowledge base articles (if enabled)
+
+The customer portal URL follows this format:
+`https://[admin-subdomain].yourhelpdesk.com`
