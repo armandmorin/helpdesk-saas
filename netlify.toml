@@ -1,14 +1,3 @@
-[build]
-  command = "npm run build"
-  publish = "client/dist"
-  functions = "netlify/functions"
-
-[dev]
-  command = "npm run dev"
-  port = 8888
-  publish = "client/dist"
-  functions = "netlify/functions"
-
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
@@ -19,15 +8,10 @@
   to = "/index.html"
   status = 200
 
+[build]
+  command = "npm run build"
+  publish = "client/dist"
+  functions = "netlify/functions"
+
 [functions]
   node_bundler = "esbuild"
-
-[build.environment]
-  NODE_VERSION = "18"
-  NPM_VERSION = "9"
-
-# Enable Netlify Identity for authentication
-[template.environment]
-  SUPABASE_URL = "Your Supabase URL"
-  SUPABASE_ANON_KEY = "Your Supabase Anon Key"
-  SUPABASE_SERVICE_ROLE_KEY = "Your Supabase Service Role Key"
