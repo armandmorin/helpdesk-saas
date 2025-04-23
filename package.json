@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "concurrently \"cd client && npm run dev\" \"netlify dev\"",
-    "build": "cd client && npm run build",
+    "build": "npx tsc -b && vite build",
     "start": "netlify dev",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
